@@ -1,3 +1,36 @@
+## 使用方式
+
+github代理地址
+- 自建 : https://gh.spoli.cn/ 
+- 网络 : https://ghproxy.link/
+
+*注意:* 失效请自行寻找代理
+docker镜像已添加自建代理
+
+### 1 使用 git 命令获取应用
+
+`1Panel`计划任务类型`Shell 脚本`的计划任务框里，添加并执行以下命令，或者保存为sh然后在终端运行。
+#### 国内
+```bash
+#!/bin/sh
+
+install_dir=$(which 1pctl | xargs grep '^BASE_DIR=' | cut -d'=' -f2)
+
+rm -rf $install_dir/1panel/resource/apps/local/napcat-1panel-napcat
+
+git clone -b main https://gh.spoli.cn/https://github.com/SilkKirk/napcat-1panel.git "$install_dir/1panel/resource/apps/local/napcat-1panel-napcat"
+
+if [ $? -eq 0 ]; then
+    rm -rf $install_dir/1panel/resource/apps/local/napcat
+    mv $install_dir/1panel/resource/apps/local/napcat-1panel-napcat $install_dir/1panel/resource/apps/local/napcat
+    echo "success"
+else
+    echo "error"
+    exit 1
+fi
+```
+然后应用商店刷新本地应用即可。
+
 <div align="center">
   <img src="https://socialify.git.ci/NapNeko/NapCatQQ/image?font=Jost&logo=https%3A%2F%2Fnapneko.github.io%2Fassets%2Flogo.png&name=1&owner=1&pattern=Diagonal%20Stripes&stargazers=1&theme=Auto" alt="NapCatQQ" width="640" height="320" />
 </div>
