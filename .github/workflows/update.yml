@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: napcat
+          ref: main
 
       - name: Get Docker tag
         id: get_docker_tag
