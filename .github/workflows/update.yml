@@ -47,7 +47,7 @@ jobs:
             echo "Renaming folder."
             mv "$current_folder" "$target_folder"
             git config --global user.email "764345996@qq.com"
-            git config --global user.name "SilkKirk"
+            git config --global user.name "NiLou"
             git add .
             git commit -m "Rename folder from ${current_folder_name} to ${TAG}"
             git push origin main
