@@ -1,11 +1,5 @@
 ## 使用方式
 
-github代理地址
-- 自建 : https://gh.spoli.cn/ 
-- 网络 : https://ghproxy.link/
-
-*注意:* 失效请自行寻找代理
-docker镜像已添加自建代理
 
 ### 1 使用 git 命令获取应用
 
@@ -18,7 +12,7 @@ install_dir=$(which 1pctl | xargs grep '^BASE_DIR=' | cut -d'=' -f2)
 
 rm -rf $install_dir/1panel/resource/apps/local/napcat-1panel-napcat
 
-git clone -b main https://gh.spoli.cn/https://github.com/SilkKirk/napcat-1panel.git "$install_dir/1panel/resource/apps/local/napcat-1panel-napcat"
+git clone -b main https://github.com/SilkKirk/napcat-1panel.git "$install_dir/1panel/resource/apps/local/napcat-1panel-napcat"
 
 if [ $? -eq 0 ]; then
     rm -rf $install_dir/1panel/resource/apps/local/napcat
